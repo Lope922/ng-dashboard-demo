@@ -1,0 +1,21 @@
+{
+  "name": "ng-dashboard-demo",
+  "version": "0.0.1",
+  "authors": [
+    "github@interfacewerk.de"
+  ],
+  "description": "Dashboard with 2 widgets and angular-gridster",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-gridster": "~0.13.5",
+    "angular": "~1.4.6",
+    "jquery": "~2.1.4"
+  }
+}
