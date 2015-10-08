@@ -1,45 +1,33 @@
 <!DOCTYPE html>
 
 <html ng-app="MyDashboard">
-	<head>
-		<script src="bower_components/jquery/dist/jquery.min.js"></script>
-		<script src="bower_components/angular/angular.js"></script>
-		<script src="bower_components/javascript-detect-element-resize/jquery.resize.js"></script>
-		<script src="bower_components/angular-gridster/dist/angular-gridster.min.js"></script>
+  <head>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/javascript-detect-element-resize/jquery.resize.js"></script>
+    <script src="bower_components/angular-gridster/dist/angular-gridster.min.js"></script>
 
 
-		<link rel="stylesheet" href="bower_components/angular-gridster/dist/angular-gridster.min.css" />
+    <link rel="stylesheet" href="bower_components/angular-gridster/dist/angular-gridster.min.css" />
 
-		<script src="js/app.js"></script>
-	</head>
-	<body ng-controller="DashboardCtrl">
-		<button ng-click="addWidget()">Add</button>
-		<button ng-click="clearWidgets()">Clear</button>
-		<ul>
-			<li ng-repeat="widget in widgets track by $index">
-				<input type="number" ng-model="widget.ui.w"/>
-			</li>
-		</ul>
-		<ul>
-			<li ng-repeat="widget in widgets track by $index">
-				{{widget.ui.w}}
-			</li>
-		</ul>
-		<div gridster>
-			<ul>
-				<li gridster-item="widget" ng-repeat="widget in widgets track by $index" row="widget.ui.x" col="widget.ui.y" size-x="widget.ui.w" size-y="widget.ui.h">
-					{{widget.type}} {{status}}
-					<widget config="widget.config" status="status" type="{{widget.type}}"></widget>
-				</li>
-			</ul>
-		</div>
-		<input type="text" ng-model="obj.truc" />
-		<widget2 data="obj"></widget2>
-	</body>
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-controller="DashboardCtrl">
+    <button ng-click="addWidget()">Add a widget</button>
+    <button ng-click="clearWidgets()">Remove all</button>
+    <div gridster>
+      <ul>
+        <li gridster-item="widget" ng-repeat="widget in widgets track by $index" row="widget.ui.x" col="widget.ui.y" size-x="widget.ui.w" size-y="widget.ui.h">
+          {{widget.type}} {{status}}
+          <widget config="widget.config" status="status" type="{{widget.type}}"></widget>
+        </li>
+      </ul>
+    </div>
+  </body>
 
-	<style>
-		li.gridster-item {
-			border: 1px solid black;
-		}
-	</style>
+  <style>
+    li.gridster-item {
+      border: 1px solid black;
+    }
+  </style>
 </html>
