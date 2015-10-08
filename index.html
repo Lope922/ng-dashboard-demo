@@ -7,19 +7,24 @@
     <script src="bower_components/javascript-detect-element-resize/jquery.resize.js"></script>
     <script src="bower_components/angular-gridster/dist/angular-gridster.min.js"></script>
 
-
     <link rel="stylesheet" href="bower_components/angular-gridster/dist/angular-gridster.min.css" />
 
     <script src="js/app.js"></script>
+    <script src="js/widgets/clock/clock.directive.js"></script>
+    <script src="js/widget-container/widget-container.directive.js"></script>
   </head>
   <body ng-controller="DashboardCtrl">
     <button ng-click="addWidget()">Add a widget</button>
     <button ng-click="clearWidgets()">Remove all</button>
     <div gridster>
       <ul>
-        <li gridster-item="widget" ng-repeat="widget in widgets track by $index" row="widget.ui.x" col="widget.ui.y" size-x="widget.ui.w" size-y="widget.ui.h">
-          {{widget.type}} {{status}}
-          <widget config="widget.config" status="status" type="{{widget.type}}"></widget>
+        <li gridster-item="widget"
+            ng-repeat="widget in widgets track by $index"
+            row="widget.ui.x"
+            col="widget.ui.y"
+            size-x="widget.ui.w"
+            size-y="widget.ui.h">
+          <widget-container url="widget.url" config="widget.config"></widget-container>
         </li>
       </ul>
     </div>
