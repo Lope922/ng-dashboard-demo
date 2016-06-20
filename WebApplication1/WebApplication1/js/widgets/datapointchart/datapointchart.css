@@ -1,0 +1,47 @@
+﻿.dpBody{
+    height: inherit;
+    width: inherit;
+}
+
+.dpHead {
+    text-align: left;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #FFFFFF;
+    font-size: 300%;
+    padding-left: 20px;
+
+}
+
+.dpTable {
+    border: 0px;
+    border-collapse: collapse;
+    text-align: center;
+    z-index:0;
+    height: 100%;
+    width: 100%;
+}
+
+
+.dpchart{
+    text-align: left;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #FFFFFF;
+    padding-left: 20px;
+    font-size: 150%;
+    height: inherit;
+    width: inherit;
+}
+
+#hiddenBut{
+    position:absolute;
+    margin-top:-35px;
+    background-color: #90CEFF;
+    border: none;
+    height: 35px;
+    width: inherit;
+}
+
+#toggleSwitch_j{
+    width: 100%;
+    height: 100%;
+}

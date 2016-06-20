@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html ng-app="MyDashboard">
+<head>
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-resize/1.1/jquery.ba-resize.js"></script>
+    <script src="../angular-gridster.min.js"></script>
+
+    <link href="js/widgets/datapointchart/datapointchart.css" rel="stylesheet" />
+    <link href="../angular-gridster.min.css" rel="stylesheet" />
+    <link href="js/widgets/barchart/barchart.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
+
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="js/app.js"></script>
+    <script src="js/widgets/clock/clock.directive.js"></script>
+    <script src="js/widgets/datapointchart/datapointchart.js"></script>
+    <script src="js/widget-container/widget-container.directive.js"></script>
+    <script src="js/widgets/barchart/barchart.js"></script>
+
+
+
+</head>
+<body ng-controller="DashboardCtrl">
+    <button ng-click="addWidget('DataPoint')">Add a datapointchart</button>
+    <button ng-click="addWidget('BarChart')">Add a barchart</button>
+    <button ng-click="clearWidgets()">Remove all</button>
+    <div gridster>
+        <ul>
+            <li gridster-item="widget"
+                ng-repeat="widget in widgets track by $index"
+                row="widget.ui.x"
+                col="widget.ui.y"
+                size-x="widget.ui.w"
+                size-y="widget.ui.h">
+                <widget-container url="widget.url" config="widget.config"></widget-container>
+            </li>
+        </ul>
+    </div>
+</body>
+
+<style>
+    li.gridster-item {
+        border: 1px solid black;
+    }
+</style>
+</html>
+
